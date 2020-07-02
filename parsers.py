@@ -60,10 +60,11 @@ class Project(NamedTuple):
 
     def telegram_info(self):
         message = f"\t<b>Фриланс биржа</b>: {self.freelance_site}\n" \
-                  f"\t<b>Задание:/b> {self.header}\n" \
-                  f"\t<b>Подробности:/b> {self.description}\n" \
-                  f"\t<b>Цена:/b> {self.price}\n" \
-                  f"\t<b>Ссылка:/b> {self.url}\n"
+                  f"\t<b>Задание:</b> {self.header}\n" \
+                  f"\t<b>Подробности:</b> {self.description}\n" \
+                  f"\t<b>Цена:</b> {self.price}\n" \
+                  f"\t<b>Ссылка:</b> {self.url}\n"
+        print(message)
         bot.send_message(config.CHAT_ID, message, parse_mode='html')
 
 
