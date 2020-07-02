@@ -11,7 +11,7 @@ bot = telebot.TeleBot(config.TOKEN)
 
 
 class KworkParser(Parser):
-    KEYWORDS = ['парсинг', 'парсер', 'сбор', 'спарсить',
+    KEYWORDS = ['парсинг', 'парсер', 'парсера', 'сбор', 'спарсить',
                 'собрать', 'парсить', 'parser', 'parsing',
                 'scraping']
 
