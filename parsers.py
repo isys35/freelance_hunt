@@ -63,7 +63,7 @@ class Project(NamedTuple):
                   f"\t<b>Подробности:/b> {self.description}\n" \
                   f"\t<b>Цена:/b> {self.price}\n" \
                   f"\t<b>Ссылка:/b> {self.url}\n"
-        bot.send_message(config.CHAT_ID, message, parse_mode='html')
+        bot.send_message(config.CHAT_ID, message)
 
 
 def main():
