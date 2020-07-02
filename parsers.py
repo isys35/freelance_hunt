@@ -7,7 +7,7 @@ import config
 import time
 
 
-bot = telebot.TeleBot(token=config.TOKEN)
+bot = telebot.TeleBot(config.TOKEN)
 
 
 class KworkParser(Parser):
