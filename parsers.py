@@ -36,6 +36,7 @@ class KworkParser(Parser):
             description = project_block.select_one('.breakwords.first-letter.f14.lh22').text
             price = float(''.join(re.findall('\d', price)))
             project = Project(freelance_site=self.host, header=header, description=description, price=price, url=url)
+            print(project)
             if project in self.projects:
                 continue
             if self.is_suitable_project(project):
@@ -63,7 +64,7 @@ class Project(NamedTuple):
                   f"\t<b>Подробности:/b> {self.description}\n" \
                   f"\t<b>Цена:/b> {self.price}\n" \
                   f"\t<b>Ссылка:/b> {self.url}\n"
-        bot.send_message(config.CHAT_ID, message)
+        bot.send_message(config.CHAT_ID, message, parse_mode='html')
 
 
 def main():
