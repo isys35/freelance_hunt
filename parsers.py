@@ -5,6 +5,7 @@ import re
 import telebot
 import config
 import time
+from requests.exceptions import ConnectionError
 
 
 bot = telebot.TeleBot(config.TOKEN)
@@ -65,7 +66,12 @@ class Project(NamedTuple):
                   f"\t<b>Цена:</b> {self.price}\n" \
                   f"\t<b>Ссылка:</b> {self.url}\n"
         print(message)
-        bot.send_message(config.CHAT_ID, message, parse_mode='html')
+        while True:
+            try:
+                bot.send_message(config.CHAT_ID, message, parse_mode='html')
+                break
+            except ConnectionError:
+                time.sleep(100)
 
 
 def main():
