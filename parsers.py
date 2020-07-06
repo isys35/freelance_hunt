@@ -79,6 +79,7 @@ def main():
     parser = KworkParser()
     while True:
         parser.update_projects()
+        print('delay')
         time.sleep(5)
 
 
