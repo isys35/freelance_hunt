@@ -71,6 +71,7 @@ class Project(NamedTuple):
                 bot.send_message(config.CHAT_ID, message, parse_mode='html')
                 break
             except ConnectionError:
+                print('ConnectionError')
                 time.sleep(100)
 
 
@@ -78,7 +79,7 @@ def main():
     parser = KworkParser()
     while True:
         parser.update_projects()
-        time.sleep(300)
+        time.sleep(5)
 
 
 if __name__ == '__main__':
