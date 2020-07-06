@@ -19,7 +19,7 @@ class KworkParser(Parser):
     def __init__(self):
         super().__init__()
         self.host = 'https://kwork.ru/'
-        self.projects_page = 'https://kwork.ru/projects?c=11'
+        self.projects_page = 'https://kwork.ru/projects?=&c=41'
         self.projects = []
 
     def get_response(self):
