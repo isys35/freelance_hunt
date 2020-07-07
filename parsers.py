@@ -116,5 +116,4 @@ def main():
 
 
 if __name__ == '__main__':
-    parser = WeblancerParser()
-    parser.update_projects()
+    main()
