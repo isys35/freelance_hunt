@@ -103,7 +103,7 @@ class Project(NamedTuple):
                 break
             except ConnectionError:
                 print('ConnectionError')
-                time.sleep(100)
+                time.sleep(10)
 
 
 def main():
@@ -112,7 +112,7 @@ def main():
         print('Поиск проектов...')
         for parser in parsers:
             parser.update_projects()
-        time.sleep(5)
+        time.sleep(2)
 
 
 if __name__ == '__main__':
