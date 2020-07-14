@@ -33,9 +33,11 @@ class KworkParser(Parser):
             url = project_block.select_one('.wants-card__header-title.first-letter.breakwords').select_one('a')['href']
             header = project_block.select_one('.wants-card__header-title.first-letter.breakwords').text
             price = project_block.select_one('.wants-card__header-price.wants-card__price.m-hidden').text
-            description = project_block.select_one('.breakwords.first-letter.f14.lh22').text
+            description = project_block.select_one('.breakwords.first-letter.f14.lh22')
+            if description:
+                description = description.text
             price = ''.join(re.findall('\d', price)) + ' руб'
-            project = Project(freelance_site=self.host, header=header, description=description, price=price, url=url)
+            project = Project(freelance_site=self.host, header=header, description=str(description), price=price, url=url)
             projects.append(project)
         return projects
 
